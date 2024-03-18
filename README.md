@@ -30,7 +30,7 @@ O frontend foi construído com Next.js.
 ## Instalação
 
 1. Certifique-se de ter o Node.js e o Docker instalados em sua máquina.
-2. Clone este repositório: git clone <[URL do repositório](https://github.com/vitor-moratz/gerenciador-tarefas.git)>
+2. Clone este repositório: git clone https://github.com/vitor-moratz/gerenciador-tarefas.git
 3. Navegue até o diretório do projeto.
 4. Instale as dependências do backend: npm install
 5. Navegue até o diretório do frontend.
