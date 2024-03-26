@@ -6,7 +6,6 @@ export default function LoginPage() {
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Head>
         <title>Webleb</title>
-        <link rel="stylesheet" href="/css/styles.css" />
       </Head>
       <div className="login-page">
         <div className="form">
@@ -40,8 +39,6 @@ export default function LoginPage() {
           </form>
         </div>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="/js/main.js"></script>
     </div>
   );
 }
