@@ -42,13 +42,15 @@ body{
 }
 h2{
  color:white;
+ padding-bottom: 30px;
 }
 
 
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: #ffffff;
   font-size: 12px;
+  font-weight: 500;
 }
 .form .message a {
   color: #289bb8;

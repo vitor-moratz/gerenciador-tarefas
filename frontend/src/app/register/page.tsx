@@ -1,41 +1,24 @@
-import Head from 'next/head';
 import '@styles/login.css';
+import Link from 'next/link';
 
-export default function LoginPage() {
+export default function RegistroPage() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Head>
-        <title>Webleb</title>
-      </Head>
       <div className="login-page">
         <div className="form">
-          <form className="register-form" method="POST">
-            <h2>Register</h2>
-            <input type="text" placeholder="Full Name *" required />
-            <input type="text" placeholder="Username *" required />
-            <input type="email" placeholder="Email *" required />
-            <input type="password" placeholder="Password *" required />
+          <form className="login-form" method="POST">
+            <h2>Gerenciador de Tarefas</h2>
+            <input type="text" placeholder="Nome" required />
+            <input type="email" placeholder="E-mail" required />
+            <input type="password" placeholder="Senha" required />
             <a className="btn" href="#">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
-              Create
+              Criar Conta
             </a>
-            <p className="message">Already registered? <a href="#">Sign In</a></p>
-          </form>
-          <form className="login-form" method="post">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username" required />
-            <input type="password" placeholder="Password" required />
-            <a className="btn" href="#">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Sign in
-            </a>
-            <p className="message">Not registered? <a href="#">Create an account</a></p>
+            <p className="message">Já tem uma conta? <Link href="http://localhost:3000/">Faça Login</Link></p>
           </form>
         </div>
       </div>
