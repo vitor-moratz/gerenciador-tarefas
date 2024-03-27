@@ -33,14 +33,14 @@ const SignUp = () => {
             <input type="text" placeholder="Nome" value={username} onChange={(e) => setUsername(e.target.value)} required />
             <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <a onClick={handleSignUp} className="btn" href="#">
+            <a onClick={handleSignUp} className="btn" href="/login">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               Criar Conta
             </a>
-            <p className="message">Já tem uma conta? <Link href="http://localhost:3000/">Faça Login</Link></p>
+            <p className="message">Já tem uma conta? <Link href="/login">Faça Login</Link></p>
           </form>
         </div>
       </div>
