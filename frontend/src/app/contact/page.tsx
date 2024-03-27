@@ -1,44 +1,50 @@
-import Head from 'next/head';
-import '@styles/login.css';
+'use client'
+import React, { useState } from 'react';
+import '@styles/home.css';
 
-export default function LoginPage() {
+const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Head>
-        <title>Webleb</title>
-      </Head>
-      <div className="login-page">
-        <div className="form">
-          <form className="register-form" method="POST">
-            <h2>Register</h2>
-            <input type="text" placeholder="Full Name *" required />
-            <input type="text" placeholder="Username *" required />
-            <input type="email" placeholder="Email *" required />
-            <input type="password" placeholder="Password *" required />
-            <a className="btn" href="#">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Create
-            </a>
-            <p className="message">Already registered? <a href="#">Sign In</a></p>
-          </form>
-          <form className="login-form" method="post">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username" required />
-            <input type="password" placeholder="Password" required />
-            <a className="btn" href="#">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Sign in
-            </a>
-            <p className="message">Not registered? <a href="#">Create an account</a></p>
-          </form>
+    <div className="container">
+      {/* Coluna esquerda */}
+      <div className="sidebar">
+        <div>
+          <button onClick={() => handleCategoryChange('Profile')}>Meu Perfil</button>
         </div>
+        <div>
+          <button onClick={() => handleCategoryChange('All')}>All Tasks</button>
+        </div>
+        <div>
+          <button onClick={() => handleCategoryChange('Important')}>Important</button>
+        </div>
+        <div>
+          <button onClick={() => handleCategoryChange('Completed')}>Completed</button>
+        </div>
+        <div>
+          <button onClick={() => handleCategoryChange('DoItNow')}>Do It Now</button>
+        </div>
+        <div>
+          <button onClick={() => handleCategoryChange('Logout')}>Logout</button>
+        </div>
+      </div>
+      {/* Conteúdo principal */}
+      <div className="main">
+        {/* Aqui você pode renderizar o conteúdo de acordo com a categoria selecionada */}
+        {/* Por exemplo: */}
+        {selectedCategory === 'All' && <p>Lista de todas as tarefas</p>}
+        {selectedCategory === 'Important' && <p>Lista de tarefas importantes</p>}
+        {selectedCategory === 'Completed' && <p>Lista de tarefas completadas</p>}
+        {selectedCategory === 'DoItNow' && <p>Lista de tarefas a serem feitas agora</p>}
+        {selectedCategory === 'Profile' && <p>Informações do perfil</p>}
+        {selectedCategory === 'Logout' && <p>Desconectado</p>}
       </div>
     </div>
   );
-}
+};
+
+export default Home;
