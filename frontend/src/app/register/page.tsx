@@ -16,6 +16,7 @@ const SignUp = () => {
     try {
         const res = await CreateUserWithEmailAndPassword(email, password)
         console.log({res})
+        sessionStorage.setItem('user', true);
         setUsername('');
         setEmail('');
         setPassword('');
@@ -33,7 +34,7 @@ const SignUp = () => {
             <input type="text" placeholder="Nome" value={username} onChange={(e) => setUsername(e.target.value)} required />
             <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <a onClick={handleSignUp} className="btn" href="/login">
+            <a onClick={handleSignUp} className="btn" href="">
               <span></span>
               <span></span>
               <span></span>

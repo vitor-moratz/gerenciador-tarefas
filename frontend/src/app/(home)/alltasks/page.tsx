@@ -1,8 +1,20 @@
 'use client'
 import React, { useState } from 'react';
 import '@styles/home.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/app/firebase/config'
+import { useRouter } from 'next/navigation';
+import { signOut } from 'firebase/auth';
 
 const Home = () => {
+  const [user] = useAuthState(auth);
+  const router = useRouter();
+  const userSession = sessionStorage.getItem('user');
+  console.log({user})
+  if (!user && !userSession){
+    router.push('/login')
+  }
+
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const handleCategoryChange = (category: string) => {
@@ -29,7 +41,10 @@ const Home = () => {
           <button onClick={() => handleCategoryChange('DoItNow')}>Do It Now</button>
         </div>
         <div>
-          <button onClick={() => handleCategoryChange('Logout')}>Logout</button>
+          <button onClick={() => { 
+            signOut(auth)
+            sessionStorage.removeItem('user')
+          }}>Logout</button>
         </div>
       </div>
       {/* Conteúdo principal */}

@@ -15,10 +15,11 @@ const SignIn = () => {
   const handleSignIn = async () => {
     try {
         const res = await signInUserWithEmailAndPassword(email, password)
-        console.log({res})
+        console.log({res});
+        sessionStorage.setItem('user', true);
         setEmail('');
         setPassword('');
-        router.push('/')
+        router.push('/alltasks')
     } catch(e){
         console.error(e)
     }
@@ -32,7 +33,7 @@ const SignIn = () => {
             <h2>Gerenciador de Tarefas</h2>
             <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <a onClick={handleSignIn} className="btn" href="/alltasks">
+            <a onClick={handleSignIn} className="btn" href="">
               <span></span>
               <span></span>
               <span></span>
